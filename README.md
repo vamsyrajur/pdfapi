@@ -11,6 +11,8 @@ https://www.youtube.com/watch?v=APOPm01BVrk&ab_channel=CoreySchafer
 Steps to create and use a venv:
     create venv : python -m venv folder_name
     activate using - venvpdfapi\Scripts\activate.bat from a cmd prompt.
+    cd into the folder that has main.py and execute "uvicorn main:app --reload --port 8080"
+    Check for http://127.0.0.1:8080/docs is the site is up or not.
     pip freeze > requirements.txt
 
 Create a new Django site:

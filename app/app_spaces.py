@@ -30,19 +30,22 @@ def create_UUID_folder():
 
     return uuid_folderPath
 
+
 def spaces_upload_file(fPath, filename, filesuffix):
     """# Upload a File to a Space"""
     folder_name = create_UUID_folder()
     upload_fname = f'{folder_name}/{str(filename)}{filesuffix}'
 
     try:
-        up = client.upload_file(fPath, # Path to local file
-                        os.getenv('do_space_name'),  # Name of Space #os.getenv('do_space_name')
-                        upload_fname)  # Name for remote file
+        up = client.upload_file(fPath,  # Path to local file
+                                # Name of Space #os.getenv('do_space_name')
+                                os.getenv('do_space_name'),
+                                upload_fname)  # Name for remote file
         return upload_fname
     except ClientError as e:
         print(e)
         raise HTTPException(status_code=404, detail="Error: Uploading File")
+
 
 def spaces_presigned_url(upload_fname):
     """# Generate a Pre-Signed URL to Download a Private File"""
@@ -54,7 +57,8 @@ def spaces_presigned_url(upload_fname):
         return url
     except ClientError as e:
         print(e)
-        raise HTTPException(status_code=404, detail="Error: Getting uploaded file url")
+        raise HTTPException(
+            status_code=404, detail="Error: Getting uploaded file url")
 
 
 """# Get bucket/space name"""

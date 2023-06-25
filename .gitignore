@@ -1,4 +1,5 @@
 # Ignore list by me.
+.vscode
 venvpdfapi/
 media/
 *.log
