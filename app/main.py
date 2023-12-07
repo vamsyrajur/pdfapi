@@ -4,8 +4,8 @@ from typing import List
 from tempfile import TemporaryDirectory
 from pathlib import Path
 from app_process import *
-from app_spaces import *
-import auth
+from app.app_spaces import *
+#import auth
 from dotenv import load_dotenv
 load_dotenv()
 

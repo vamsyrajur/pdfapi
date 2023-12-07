@@ -6,6 +6,7 @@ media/
 *.env
 imp.txt
 get_keys.py
+trialScripts/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
